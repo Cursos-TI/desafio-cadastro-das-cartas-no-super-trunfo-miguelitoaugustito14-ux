@@ -6,7 +6,7 @@
 typedef struct {
     char Estado;
     char Codigo[4];
-    char nomeCidade[100];
+    char NomeCidade[100];
     unsigned long int Populacao;
     float Area;
     float PIB;
@@ -33,11 +33,11 @@ void lerCarta(CARTA *carta, int numero){
     
     printf("Nome da Cidade: ");
     getchar();
-    fgets(carta-> nomeCidade, sizeof(carta->nomeCidade), stdin);
+    fgets(carta-> nomeCidade, sizeof(carta->NomeCidade), stdin);
 
-    for (int i = 0; carta->nomeCidade[i] != '\0'; i++) {
-        if (carta->nomeCidade[i] == '\n'){
-            carta->nomeCidade[i] = '\0';
+    for (int i = 0; carta->NomeCidade[i] != '\0'; i++) {
+        if (carta->NomeCidade[i] == '\n'){
+            carta->NomeCidade[i] = '\0';
         }
     }
     printf("Populacao: ");
@@ -67,4 +67,25 @@ void lerCarta(CARTA *carta, int numero){
         carta->PibPercapita +
         (1.0f / carta->Densidade);;
 
+}
+
+
+void imprimirCarta(CARTA carta, int numero){
+    printf("\nCarta %d: \n", numero);
+    printf("Estado: %c \n ", carta.Estado);
+    printf("Codigo: %s \n", carta.Codigo);
+    printf("Nome da Cidade: %s\n", carta.NomeCidade);
+    printf("Populacao: %lu\n", carta.Populacao);
+    printf("Area: %.3f Km²\n", carta.Area);
+    printf("PIB: %.3f bilhoes de reais\n", carta.PIB);
+    printf("Numero de Pontos Turisticos: %d", carta.PontosTuristicos);
+    printf("Densidade Populacioanal: %.3f", carta.Densidade);
+    printf("PIB per Capita: %.3f", carta.PibPercapita);
+    printf("Super Poder: %.3f", carta.SuperPoder); 
+}
+
+void compararCarta(CARTA c1, CARTA c2){
+    printf("\n=== Comparacao de Cartas ===\n");
+
+    printf("")
 }
