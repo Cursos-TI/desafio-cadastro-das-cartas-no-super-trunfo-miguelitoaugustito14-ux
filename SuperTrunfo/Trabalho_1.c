@@ -22,18 +22,18 @@ void lerCarta(CARTA *carta, int numero){
 
     do{
         printf("Estado (Letra de A a H): ");
-        scaf("%c", &carta->Estado);
+        scanf(" %c", &carta->Estado);
         if (carta->Estado< 'A' || carta->Estado > 'H' ) {
             printf("Estado Invalido! Digite uma letra de A a H.\n");
         }
-    }while (carta->Estado < 'A' || carta->Estado > 'H');
+    } while (carta->Estado < 'A' || carta->Estado > 'H');
 
     printf("Codigo da Carta: ");
-    scanf("%s", carta->Codigo);
+    scanf(" %s", carta->Codigo);
     
     printf("Nome da Cidade: ");
     getchar();
-    fgets(carta-> nomeCidade, sizeof(carta->NomeCidade), stdin);
+    fgets(carta-> NomeCidade, sizeof(carta->NomeCidade), stdin);
 
     for (int i = 0; carta->NomeCidade[i] != '\0'; i++) {
         if (carta->NomeCidade[i] == '\n'){
@@ -78,14 +78,37 @@ void imprimirCarta(CARTA carta, int numero){
     printf("Populacao: %lu\n", carta.Populacao);
     printf("Area: %.3f Km²\n", carta.Area);
     printf("PIB: %.3f bilhoes de reais\n", carta.PIB);
-    printf("Numero de Pontos Turisticos: %d", carta.PontosTuristicos);
-    printf("Densidade Populacioanal: %.3f", carta.Densidade);
-    printf("PIB per Capita: %.3f", carta.PibPercapita);
-    printf("Super Poder: %.3f", carta.SuperPoder); 
+    printf("Numero de Pontos Turisticos: %d\n", carta.PontosTuristicos);
+    printf("Densidade Populacioanal: %.3f\n", carta.Densidade);
+    printf("PIB per Capita: %.3f\n", carta.PibPercapita);
+    printf("Super Poder: %.3f\n", carta.SuperPoder); 
 }
 
-void compararCarta(CARTA c1, CARTA c2){
+void compararCartas(CARTA C1, CARTA C2){
     printf("\n=== Comparacao de Cartas ===\n");
 
-    printf("")
+    printf("Populacao: Carta 1 venceu! (%d)\n", C1.Populacao > C2.Populacao);
+    printf("Area: Carta 1 venceu! (%d)\n", C1.Area > C2.Area);
+    printf("PIB: Carta 1 venceu! (%d)\n", C1.PIB > C2.PIB);
+    printf("Pontos Turisticos: Carta 1 venceu! (%d)\n", C1.PontosTuristicos > C2.PontosTuristicos);
+    printf("Densidade Populacional: Carta 1 venceu! (%d)\n", C1.Densidade < C2.Densidade);
+    printf("PIB per Capita: Carta 1 venceu! (%d)\n", C1.PibPercapita > C2.PibPercapita);
+    printf("Super Poder: Carta 1 venceu! (%d)\n", C1.SuperPoder > C2.SuperPoder);
+}
+
+int main(){
+    CARTA cartas[TOTAL_CARTAS];
+
+    for (int i = 0; i < TOTAL_CARTAS: i++) {
+        lerCarta(&cartas[i], i+1);
+    }
+
+    printf("\n=== Informacoes das Cartas ===\n");
+    for(int = 0; i < TOTAL_CARTAS; i++);{
+        imprimirCarta(cartas[i], i + 1);
+    }
+
+    compararCartas(cartas[0], cartas[1]);
+
+    return 0;
 }
