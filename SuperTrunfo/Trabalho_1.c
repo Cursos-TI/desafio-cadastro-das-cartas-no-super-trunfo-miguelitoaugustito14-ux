@@ -99,12 +99,12 @@ void compararCartas(CARTA C1, CARTA C2){
 int main(){
     CARTA cartas[TOTAL_CARTAS];
 
-    for (int i = 0; i < TOTAL_CARTAS: i++) {
+    for (int i = 0; i < TOTAL_CARTAS; i++) {
         lerCarta(&cartas[i], i+1);
     }
 
     printf("\n=== Informacoes das Cartas ===\n");
-    for(int = 0; i < TOTAL_CARTAS; i++);{
+    for(int = 0; i < TOTAL_CARTAS; i++) {
         imprimirCarta(cartas[i], i + 1);
     }
 
