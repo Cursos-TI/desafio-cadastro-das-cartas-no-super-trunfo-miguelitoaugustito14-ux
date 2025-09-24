@@ -75,5 +75,88 @@ void ImprimirCarta(CARTA carta, int numero){
     printf("Nome da Cidade: %s\n", carta.NomeCidade);
     printf("Populacao: %lu\n", carta.Populacao);
     printf("Area: %.3f Km²\n", carta.Area);
-    printf("PIB: %.3f bilhoes de Reais\n", carta.PIB)
+    printf("PIB: %.3f bilhoes de Reais\n", carta.PIB);
+    printf("Super Poder: %.3f\n", carta.SuperPoder);
+}
+
+void CompararCarta(CARTA C1, CARTA C2){
+    int pontosC1 = 0, pontosC2 = 0,Empate = 0;
+
+    printf("\n=== Comparacao de Cartas===\n");
+
+    if(C1.Populacao > C2.Populacao){
+        printf("Populacao: Carta 1 Venceu!!!\n");
+        pontosC1++;
+    }else if(C1.Populacao < C2.Populacao){
+        printf("Populacao: Carta 2 Venceu!!!\n");
+        pontosC2++;
+    }else {
+        printf("Populacao: Empate!!!\n");
+        Empate++;
+    }
+
+    if(C1.Area > C2.Area){
+        printf("Area: Carta 1 Venceu!!!\n");
+        pontosC1++;
+    }else if(C1.Area < C2.Area){
+        printf("Area: Carta 2 Venceu!!!\n");
+        pontosC2++;
+    }else {
+        printf("Area: Empate!!!\n");
+        Empate++;
+    }
+
+    if(C1.PIB > C2.PIB){
+        printf("PIB: Carta 1 Venceu!!!\n");
+        pontosC1++;
+    }else if(C1.PIB < C2.PIB){
+        printf("PIB: Carta 2 Venceu!!!\n");
+        pontosC2++:
+    }else{
+        printf("PIB: Empate!!!\n");
+        Empate++;
+    }
+
+    if (C1.PontosTuristicos > C2.PontosTuristicos){
+        printf("Pontos Turisticos: Carta 1 Vennceu!!!\n"),
+        pontosC1++;
+    }else if(C1.PontosTuristicos < C2.PontosTuristicos){
+        printf("Pontos Turisticos: Carta 2 Venceu!!!\n");
+        pontosC2++;
+    }else{
+        printf("Pontos Turisticos: Empate!!!");
+        Empate++;
+    }
+
+    if(C1.Densidade > C2.Densidade){
+        printf("Densidade Populacional: Carta 1 Venceu!!!(Menos densa)\n");
+        pontosC1++;
+    }else if(C1.Densidade < C2.Densidade){
+        printf("Densidade Populacional: Carta 2 Venceu!!!(Menos densa)\n");
+        pontosC2++;
+    }else{
+        printf("Densidade Populacional: Empate!!\n");
+        Empate++:
+    }
+
+    if(C1.PIBPercapita > C2.PIBPercapita){
+        printf("PIBPercapita: Carta 1 Venceu!!!\n");
+        pontosC1++;
+    }else if(C1.PIBPercapita < C2.PIBPercapita){
+        printf("PIBPercapita: Carta 2 Venceu!!!\n");
+        pontosC2++;
+    }else{
+        printf("PIBPercapita: Empate!!!\n");
+        Empate++;
+    }
+
+    if(C1.SuperPoder > C2.SuperPoder){
+        printf("Super Poder: Carta 1 Venceu!!!\n");
+        pontosC1++;
+    }else if(C1.SuperPoder < C2.SuperPoder){
+        printf("Super Poder: Carta 2 Venceu!!!\n");
+    }else{
+        printf("Super Poder: Empate!!!\n");
+        Empate++;
+    }
 }
